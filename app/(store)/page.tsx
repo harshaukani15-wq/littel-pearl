@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { Button } from '@/components/ui/button'
 import { getStoreSettings } from '@/app/actions/settings'
 import { STORE_NAME } from '@/lib/constants'
-import { ShieldCheck, Truck, RefreshCw, BadgeCheck } from 'lucide-react'
+import { ShieldCheck, Sparkles, RefreshCw, BadgeCheck } from 'lucide-react'
 
 // Revalidate every hour
 export const revalidate = 3600
@@ -82,9 +82,9 @@ export default async function HomePage() {
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="flex flex-col items-center text-center gap-2">
-              <Truck className="h-6 w-6 text-primary" />
-              <h3 className="font-label text-label-caps text-on-surface">Free Shipping</h3>
-              <p className="text-body-sm text-on-surface-variant">On orders over ₹2000</p>
+              <Sparkles className="h-6 w-6 text-primary" />
+              <h3 className="font-label text-label-caps text-on-surface">Premium Quality</h3>
+              <p className="text-body-sm text-on-surface-variant">Carefully crafted for you</p>
             </div>
             <div className="flex flex-col items-center text-center gap-2">
               <ShieldCheck className="h-6 w-6 text-primary" />
