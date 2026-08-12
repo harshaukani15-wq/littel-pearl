@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-tint: #735858;
+  --color-secondary-fixed-dim: #c8c8b0;
+  --color-secondary-container: #e1e1c9;
+  --color-on-surface: #2c160e;
+  --color-error: #ba1a1a;
+  --color-outline-variant: #d3c3c2;
+  --color-on-primary-container: #725758;
+  --color-inverse-on-surface: #ffede8;
+  --color-secondary: #5e604d;
+  --color-surface-variant: #ffdbd0;
+  --color-surface-dim: #fbd1c4;
+  --color-error-container: #ffdad6;
+  --color-on-primary-fixed: #2a1617;
+  --color-on-secondary-fixed-variant: #474836;
+  --color-tertiary-fixed: #ffe088;
+  --color-on-primary: #ffffff;
+  --color-surface-container-highest: #ffdbd0;
+  --color-on-tertiary-fixed: #241a00;
+  --color-on-tertiary-fixed-variant: #574500;
+  --color-surface: #fff8f6;
+  --color-outline: #817474;
+  --color-on-surface-variant: #4f4444;
+  --color-on-error: #ffffff;
+  --color-primary-fixed: #fedada;
+  --color-primary-fixed-dim: #e1bebe;
+  --color-surface-container-low: #fff1ed;
+  --color-on-secondary-fixed: #1b1d0e;
+  --color-surface-container: #ffe9e3;
+  --color-tertiary: #735c00;
+  --color-on-secondary-container: #636451;
+  --color-tertiary-container: #fdd55a;
+  --color-surface-bright: #fff8f6;
+  --color-background: #fff8f6;
+  --color-on-secondary: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-tertiary: #ffffff;
+  --color-primary: #735858;
+  --color-surface-container-high: #ffe2da;
+  --color-on-primary-fixed-variant: #594041;
+  --color-secondary-fixed: #e4e4cc;
+  --color-on-tertiary-container: #735c00;
+  --color-inverse-primary: #e1bebe;
+  --color-on-background: #2c160e;
+  --color-on-error-container: #93000a;
+  --color-primary-container: #f4d0d0;
+  --color-inverse-surface: #442a22;
+  --color-tertiary-fixed-dim: #e9c349;
+
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  --spacing-margin-mobile: 16px;
+  --spacing-unit: 8px;
+  --spacing-margin-desktop: 64px;
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1280px;
+
+  --font-body: Inter, sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-label: Inter, sans-serif;
+  
+  /* shadcn compatibility */
+  --color-border: #d3c3c2;
+  --color-input: #d3c3c2;
+  --color-ring: #735858;
+  --color-foreground: #2c160e;
+  --color-card: #fff8f6;
+  --color-card-foreground: #2c160e;
+  --color-popover: #fff8f6;
+  --color-popover-foreground: #2c160e;
+  --color-primary-foreground: #ffffff;
+  --color-secondary-foreground: #636451;
+  --color-muted: #ffe9e3;
+  --color-muted-foreground: #4f4444;
+  --color-accent: #fdd55a;
+  --color-accent-foreground: #735c00;
+  --color-destructive: #ba1a1a;
+  --color-destructive-foreground: #ffffff;
+}
+
+@layer base {
+  :root {
+    --background: #fff8f6;
+    --foreground: #2c160e;
+    --card: #fff8f6;
+    --card-foreground: #2c160e;
+    --popover: #fff8f6;
+    --popover-foreground: #2c160e;
+    --primary: #735858;
+    --primary-foreground: #ffffff;
+    --secondary: #e1e1c9;
+    --secondary-foreground: #636451;
+    --muted: #ffe9e3;
+    --muted-foreground: #4f4444;
+    --accent: #fdd55a;
+    --accent-foreground: #735c00;
+    --destructive: #ba1a1a;
+    --destructive-foreground: #ffffff;
+    --border: #d3c3c2;
+    --input: #d3c3c2;
+    --ring: #735858;
+    --radius: 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .text-display-lg {
+    font-family: var(--font-display);
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  .text-display-lg-mobile {
+    font-family: var(--font-display);
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+  }
+  .text-headline-md {
+    font-family: var(--font-display);
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 500;
+  }
+  .text-headline-sm {
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+  }
+  .text-body-lg {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+  .text-body-md {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+  .text-body-sm {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  .text-label-caps {
+    font-family: var(--font-label);
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+/* Utility: hide scrollbar but keep scrolling */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
