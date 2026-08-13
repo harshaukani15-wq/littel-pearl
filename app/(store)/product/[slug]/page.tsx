@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Heart, Truck, ShieldCheck, RefreshCw, Star, ChevronRight } from 'lucide-react'
+import { Heart, Sparkles, Star, ChevronRight } from 'lucide-react'
 import ProductActions from './ProductActions'
 import { formatCurrency } from '@/lib/utils'
 
@@ -148,16 +148,16 @@ export default async function ProductPage({
             {/* Trust Indicators */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-y-3 md:gap-y-4 gap-x-8 py-4 md:py-6 px-4 md:px-6 bg-surface-container rounded-xl">
               <div className="flex items-center gap-3">
-                <Truck className="w-5 h-5 text-primary" />
-                <span className="font-body text-body-sm text-on-surface">Free shipping over ₹2000</span>
+                <Sparkles className="w-5 h-5 text-primary" />
+                <span className="font-body text-body-sm text-on-surface">Premium quality</span>
               </div>
               <div className="flex items-center gap-3">
-                <ShieldCheck className="w-5 h-5 text-primary" />
-                <span className="font-body text-body-sm text-on-surface">Secure payment</span>
+                <Star className="w-5 h-5 text-primary" />
+                <span className="font-body text-body-sm text-on-surface">Exclusive designs</span>
               </div>
               <div className="flex items-center gap-3">
-                <RefreshCw className="w-5 h-5 text-primary" />
-                <span className="font-body text-body-sm text-on-surface">7-day easy returns</span>
+                <Heart className="w-5 h-5 text-primary" />
+                <span className="font-body text-body-sm text-on-surface">Made with love</span>
               </div>
             </div>
             

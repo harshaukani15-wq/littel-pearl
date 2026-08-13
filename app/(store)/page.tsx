@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { Button } from '@/components/ui/button'
 import { getStoreSettings } from '@/app/actions/settings'
 import { STORE_NAME } from '@/lib/constants'
-import { ShieldCheck, Sparkles, RefreshCw, BadgeCheck } from 'lucide-react'
+import { Heart, Sparkles, Star, BadgeCheck } from 'lucide-react'
 
 // Revalidate every hour
 export const revalidate = 3600
@@ -87,14 +87,14 @@ export default async function HomePage() {
               <p className="text-body-sm text-on-surface-variant">Carefully crafted for you</p>
             </div>
             <div className="flex flex-col items-center text-center gap-2">
-              <ShieldCheck className="h-6 w-6 text-primary" />
-              <h3 className="font-label text-label-caps text-on-surface">Secure Payments</h3>
-              <p className="text-body-sm text-on-surface-variant">100% safe transactions</p>
+              <Star className="h-6 w-6 text-primary" />
+              <h3 className="font-label text-label-caps text-on-surface">Exclusive Designs</h3>
+              <p className="text-body-sm text-on-surface-variant">Unique & handcrafted</p>
             </div>
             <div className="flex flex-col items-center text-center gap-2">
-              <RefreshCw className="h-6 w-6 text-primary" />
-              <h3 className="font-label text-label-caps text-on-surface">Easy Returns</h3>
-              <p className="text-body-sm text-on-surface-variant">7-day return policy</p>
+              <Heart className="h-6 w-6 text-primary" />
+              <h3 className="font-label text-label-caps text-on-surface">Made With Love</h3>
+              <p className="text-body-sm text-on-surface-variant">For your little ones</p>
             </div>
             <div className="flex flex-col items-center text-center gap-2">
               <BadgeCheck className="h-6 w-6 text-primary" />
