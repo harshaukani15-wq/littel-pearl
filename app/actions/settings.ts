@@ -3,27 +3,37 @@
 import { createClient } from '@/lib/supabase/server'
 import { getAdminSupabase } from '@/lib/supabase/admin'
 import { revalidatePath } from 'next/cache'
+import { unstable_cache } from 'next/cache'
+
+// Cache getStoreSettings for 5 minutes to avoid hitting the database on every page load
+const getCachedSettings = unstable_cache(
+  async () => {
+    const supabase = await createClient()
+
+    const { data, error } = await supabase
+      .from('store_settings')
+      .select('*')
+      .single()
+
+    if (error) {
+      console.error('Failed to fetch settings:', error)
+      return null
+    }
+
+    return data
+  },
+  ['store-settings'],
+  { revalidate: 300, tags: ['store-settings'] } // Cache for 5 minutes
+)
 
 export async function getStoreSettings() {
-  const supabase = await createClient()
-  
-  const { data, error } = await supabase
-    .from('store_settings')
-    .select('*')
-    .single()
-
-  if (error) {
-    console.error('Failed to fetch settings:', error)
-    return null
-  }
-
-  return data
+  return getCachedSettings()
 }
 
 export async function updateStoreSettings(formData: FormData) {
   try {
     const supabase = await getAdminSupabase()
-    
+
     const settings = {
       store_name: formData.get('store_name') as string,
       store_description: formData.get('store_description') as string,

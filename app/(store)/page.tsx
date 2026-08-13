@@ -71,6 +71,7 @@ export default async function HomePage() {
             src="/hero.png" 
             alt="Beautifully styled lifestyle photograph of a sleeping infant with a delicate pearl bracelet" 
             fill
+            sizes="50vw"
             className="object-cover"
             priority
           />
@@ -117,6 +118,7 @@ export default async function HomePage() {
                     src={category.image_url}
                     alt={category.name}
                     fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
@@ -161,6 +163,7 @@ export default async function HomePage() {
                           src={primaryImage.url}
                           alt={primaryImage.alt_text || product.name}
                           fill
+                          sizes="(max-width: 768px) 50vw, 25vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                       ) : (
@@ -211,6 +214,7 @@ export default async function HomePage() {
                         src={primaryImage.url}
                         alt={primaryImage.alt_text || product.name}
                         fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     ) : (
