@@ -18,7 +18,8 @@ export function MobileNav({ links, storeName, isOpen, onClose }: MobileNavProps)
   // Close on route change
   useEffect(() => {
     onClose()
-  }, [pathname, onClose])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname])
 
   // Lock body scroll when open
   useEffect(() => {
