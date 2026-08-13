@@ -8,11 +8,13 @@ export const revalidate = 60
 export default async function ShopPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
+  const resolvedParams = await searchParams
   const supabase = await createClient()
 
-  const searchQuery = searchParams?.q as string | undefined
+  const searchQuery = resolvedParams?.q as string | undefined
+  const isFeatured = resolvedParams?.featured === 'true'
 
   let query = supabase
     .from('products')
@@ -24,6 +26,10 @@ export default async function ShopPage({
 
   if (searchQuery) {
     query = query.ilike('name', `%${searchQuery}%`)
+  }
+  
+  if (isFeatured) {
+    query = query.eq('is_featured', true)
   }
 
   const { data: products, error } = await query
@@ -41,8 +47,12 @@ export default async function ShopPage({
     <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop py-6 md:py-12">
       {/* Page Header */}
       <div className="text-center mb-8 md:mb-12">
-        <h1 className="font-display text-2xl md:text-display-lg text-primary mb-2 md:mb-4">Shop All</h1>
-        <p className="font-body text-body-md md:text-body-lg text-on-surface-variant">Discover our complete collection of elegant baby wear and timeless pearls.</p>
+        <h1 className="font-display text-2xl md:text-display-lg text-primary mb-2 md:mb-4">
+          {isFeatured ? 'Featured Products' : searchQuery ? `Search Results` : 'Shop All'}
+        </h1>
+        <p className="font-body text-body-md md:text-body-lg text-on-surface-variant">
+          {isFeatured ? 'Our handpicked selection of premium products.' : 'Discover our complete collection of elegant baby wear and timeless pearls.'}
+        </p>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-8">

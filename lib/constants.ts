@@ -4,6 +4,7 @@ export const STORE_DESCRIPTION = 'Little Moments, Beautifully Adorned. Discover 
 export const NAV_LINKS = [
   { name: 'Home', href: '/' },
   { name: 'Shop', href: '/shop' },
+  { name: 'Featured', href: '/shop?featured=true' },
   { name: 'Baby', href: '/shop/baby' },
   { name: 'Jewellery', href: '/shop/jewellery' },
   { name: 'Occasions', href: '/shop/occasions' },
