@@ -51,7 +51,7 @@ export default async function ContactPage({
 
           <div className="bg-surface-container rounded-xl p-6 md:p-8 border border-outline-variant/30">
             <h2 className="font-display text-title-lg text-on-surface mb-6">Send a Message</h2>
-            <ContactForm targetEmail={contactFormEmail} />
+            <ContactForm />
           </div>
         </div>
       </div>
