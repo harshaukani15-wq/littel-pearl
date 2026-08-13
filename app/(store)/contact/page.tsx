@@ -14,6 +14,7 @@ export default async function ContactPage({
   const settings = await getStoreSettings()
   const contactEmail = settings?.contact_email || 'support@littlepearl.in'
   const contactPhone = settings?.contact_phone || '+91 98765 43210'
+  const contactFormEmail = process.env.CONTACT_FORM_EMAIL || 'harshaukani15@gmail.com'
   const contactTiming = settings?.contact_timing || 'Mon-Fri, 9am - 6pm IST'
   const contactHeading = settings?.contact_heading || "We'd love to hear from you. Whether you have a question about our products, need help with an order, or just want to say hello, our team is ready to assist."
 
@@ -61,7 +62,7 @@ export default async function ContactPage({
               </div>
             ) : null}
 
-            <form action="https://formsubmit.co/harshaukani15@gmail.com" method="POST" className="space-y-4">
+            <form action={`https://formsubmit.co/${contactFormEmail}`} method="POST" className="space-y-4">
               <input type="hidden" name="_next" value="https://littel-pearl.vercel.app/contact?success=true" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="New Contact Form Submission - Little Pearl" />

@@ -13,10 +13,12 @@ export default async function AdminLoginPage({
   async function login(formData: FormData) {
     'use server'
     const password = formData.get('password')
+    const adminPassword = process.env.ADMIN_PASSWORD || 'Harsha@$163616'
+    const adminCookieValue = process.env.ADMIN_AUTH_COOKIE || 'harshafeni_secure'
     
-    if (password === 'Harsha@$163616') {
+    if (password === adminPassword) {
       const cookieStore = await cookies()
-      cookieStore.set('admin_auth_cookie', 'harshafeni_secure', {
+      cookieStore.set('admin_auth_cookie', adminCookieValue, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         path: '/',

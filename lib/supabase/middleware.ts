@@ -43,7 +43,8 @@ export async function updateSession(request: NextRequest) {
   // Custom Admin Password Check
   if (isAdminRoute && !isAdminLoginRoute) {
     const adminCookie = request.cookies.get('admin_auth_cookie')?.value
-    if (adminCookie !== 'harshafeni_secure') {
+    const adminCookieValue = process.env.ADMIN_AUTH_COOKIE || 'harshafeni_secure'
+    if (adminCookie !== adminCookieValue) {
       const url = request.nextUrl.clone()
       url.pathname = '/harshafeni/login'
       return NextResponse.redirect(url)

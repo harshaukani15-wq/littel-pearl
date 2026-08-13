@@ -6,8 +6,9 @@ import { cookies } from 'next/headers'
 export async function getAdminSupabase() {
   const cookieStore = await cookies()
   const adminCookie = cookieStore.get('admin_auth_cookie')?.value
+  const adminCookieValue = process.env.ADMIN_AUTH_COOKIE || 'harshafeni_secure'
   
-  if (adminCookie !== 'harshafeni_secure') {
+  if (adminCookie !== adminCookieValue) {
     throw new Error('Unauthorized')
   }
 
