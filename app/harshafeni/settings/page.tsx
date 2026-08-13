@@ -72,9 +72,24 @@ export default function SettingsPage() {
                 <Input name="contact_phone" defaultValue={settings?.contact_phone} required />
               </div>
             </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Contact Email</label>
+                <Input name="contact_email" type="email" defaultValue={settings?.contact_email} required />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Phone Support Timing</label>
+                <Input name="contact_timing" defaultValue={settings?.contact_timing} placeholder="e.g. Mon-Fri, 9am - 6pm IST" />
+              </div>
+            </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium">Contact Email</label>
-              <Input name="contact_email" type="email" defaultValue={settings?.contact_email} required />
+              <label className="text-sm font-medium">Contact Us Page Heading (Get in Touch text)</label>
+              <textarea 
+                name="contact_heading" 
+                defaultValue={settings?.contact_heading} 
+                className="flex min-h-[80px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                placeholder="We'd love to hear from you..."
+              />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Store Description (SEO & Footer)</label>

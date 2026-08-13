@@ -31,6 +31,8 @@ export async function updateStoreSettings(formData: FormData) {
       hero_subtitle: formData.get('hero_subtitle') as string,
       contact_email: formData.get('contact_email') as string,
       contact_phone: formData.get('contact_phone') as string,
+      contact_timing: formData.get('contact_timing') as string,
+      contact_heading: formData.get('contact_heading') as string,
       shipping_banner_text: formData.get('shipping_banner_text') as string,
     }
 
@@ -42,9 +44,8 @@ export async function updateStoreSettings(formData: FormData) {
     if (error) throw error
 
     // Revalidate paths that use these settings
-    revalidatePath('/')
+    revalidatePath('/', 'layout')
     revalidatePath('/harshafeni/settings')
-    revalidatePath('/(store)', 'layout')
 
     return { success: true }
   } catch (error: any) {
