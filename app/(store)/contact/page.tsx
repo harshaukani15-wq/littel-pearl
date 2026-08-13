@@ -74,12 +74,30 @@ export default async function ContactPage({
               
               <div>
                 <label htmlFor="email" className="block text-body-sm font-medium mb-1">Email</label>
-                <input type="email" id="email" name="email" required className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary" />
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder="name@example.com"
+                  pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                  title="Please enter a valid email address"
+                  required 
+                  className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary invalid:focus:border-error" 
+                />
               </div>
 
               <div>
                 <label htmlFor="phone" className="block text-body-sm font-medium mb-1">Mobile Number</label>
-                <input type="tel" id="phone" name="phone" required className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary" />
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  placeholder="e.g. 9876543210"
+                  pattern="^[6-9]\d{9}$"
+                  title="Please enter a valid 10-digit Indian mobile number"
+                  required 
+                  className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary invalid:focus:border-error" 
+                />
               </div>
               
               <div>
