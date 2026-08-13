@@ -1,14 +1,23 @@
 'use server'
 
-import { createClient } from '@/lib/supabase/server'
+import { createClient } from '@supabase/supabase-js'
+import { createClient as createServerClient } from '@/lib/supabase/server'
 import { getAdminSupabase } from '@/lib/supabase/admin'
 import { revalidatePath } from 'next/cache'
 import { unstable_cache } from 'next/cache'
 
+// A lightweight Supabase client that does NOT use cookies (safe for unstable_cache)
+function getPublicSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
+}
+
 // Cache getStoreSettings for 5 minutes to avoid hitting the database on every page load
 const getCachedSettings = unstable_cache(
   async () => {
-    const supabase = await createClient()
+    const supabase = getPublicSupabase()
 
     const { data, error } = await supabase
       .from('store_settings')
