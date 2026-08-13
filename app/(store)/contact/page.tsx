@@ -28,20 +28,20 @@ export default async function ContactPage({
         <h1 className="font-display text-display-md md:text-display-lg text-on-surface mb-8 md:mb-12 text-center">
           Contact Us
         </h1>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 font-body text-body-lg text-on-surface-variant">
           <div>
             <h2 className="font-display text-headline-sm text-on-surface mb-4">Get in Touch</h2>
             <p className="mb-6 whitespace-pre-wrap">
               {contactHeading}
             </p>
-            
+
             <div className="space-y-4">
               <div>
                 <h3 className="font-label text-label-caps text-on-surface">Email</h3>
                 <p>{contactEmail}</p>
               </div>
-              
+
               {/* 
               <div>
                 <h3 className="font-label text-label-caps text-on-surface">Phone</h3>
@@ -51,10 +51,10 @@ export default async function ContactPage({
               */}
             </div>
           </div>
-          
+
           <div className="bg-surface-container rounded-xl p-6 md:p-8 border border-outline-variant/30">
             <h2 className="font-display text-title-lg text-on-surface mb-6">Send a Message</h2>
-            
+
             {isSuccess ? (
               <div className="bg-green-50 border border-green-200 text-green-800 p-4 rounded-lg mb-6">
                 <p className="font-medium">Thank you for your message!</p>
@@ -66,45 +66,45 @@ export default async function ContactPage({
               <input type="hidden" name="_next" value="https://littel-pearl.vercel.app/contact?success=true" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_subject" value="New Contact Form Submission - Little Pearl" />
-              
+
               <div>
                 <label htmlFor="name" className="block text-body-sm font-medium mb-1">Name</label>
                 <input type="text" id="name" name="name" required className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary" />
               </div>
-              
+
               <div>
                 <label htmlFor="email" className="block text-body-sm font-medium mb-1">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
                   placeholder="name@example.com"
                   pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                   title="Please enter a valid email address"
-                  required 
-                  className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary invalid:focus:border-error" 
+                  required
+                  className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary invalid:focus:border-error"
                 />
               </div>
 
               <div>
                 <label htmlFor="phone" className="block text-body-sm font-medium mb-1">Mobile Number</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone" 
-                  placeholder="e.g. 9876543210"
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="0000000000"
                   pattern="^[6-9]\d{9}$"
                   title="Please enter a valid 10-digit Indian mobile number"
-                  required 
-                  className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary invalid:focus:border-error" 
+                  required
+                  className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary invalid:focus:border-error"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-body-sm font-medium mb-1">Message</label>
                 <textarea id="message" name="message" rows={4} required className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary"></textarea>
               </div>
-              
+
               <button type="submit" className="w-full bg-primary text-on-primary py-3 rounded-lg font-label uppercase tracking-wider hover:bg-primary/90 transition-colors">
                 Send Message
               </button>

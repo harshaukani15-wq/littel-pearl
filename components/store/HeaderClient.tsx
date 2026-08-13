@@ -31,7 +31,7 @@ export function HeaderClient({ storeName, navLinks }: HeaderClientProps) {
             {/* Logo */}
             <Link 
               href="/"
-              className="font-display text-xl md:text-display-lg tracking-widest text-primary dark:text-primary-fixed-dim absolute left-1/2 -translate-x-1/2"
+              className="font-display text-xl md:text-display-lg tracking-widest text-primary dark:text-primary-fixed-dim absolute left-1/2 -translate-x-1/2 animate-pulse hover:animate-none hover:scale-110 transition-all duration-300 hover:text-primary-container"
             >
               {storeName.toUpperCase()}
             </Link>

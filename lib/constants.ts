@@ -2,6 +2,7 @@ export const STORE_NAME = 'Little Pearl'
 export const STORE_DESCRIPTION = 'Little Moments, Beautifully Adorned. Discover our exquisite collection of soft, natural fabrics and delicate pearls designed for your little ones.'
 
 export const NAV_LINKS = [
+  { name: 'Home', href: '/' },
   { name: 'Shop', href: '/shop' },
   { name: 'Baby', href: '/shop/baby' },
   { name: 'Jewellery', href: '/shop/jewellery' },
