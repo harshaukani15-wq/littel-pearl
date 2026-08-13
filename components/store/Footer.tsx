@@ -24,14 +24,14 @@ export function Footer() {
         <div className="col-span-1 flex flex-col gap-3">
           <h4 className="font-display text-title-md text-on-surface mb-1 md:mb-2">About</h4>
           <Link href="/story" className="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors">Our Heritage</Link>
-          <Link href="#" className="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors">Sustainability</Link>
+          <Link href="/sustainability" className="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors">Sustainability</Link>
         </div>
         
         <div className="col-span-2 md:col-span-1 flex flex-col gap-3 mt-2 md:mt-0">
           <h4 className="font-display text-title-md text-on-surface mb-1 md:mb-2">Help</h4>
-          <Link href="#" className="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors">Shipping & Returns</Link>
-          <Link href="#" className="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors">Contact Us</Link>
-          <Link href="#" className="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors">Privacy Policy</Link>
+          <Link href="/shipping" className="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors">Shipping & Returns</Link>
+          <Link href="/contact" className="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors">Contact Us</Link>
+          <Link href="/privacy" className="font-body text-body-sm text-on-surface-variant hover:text-primary transition-colors">Privacy Policy</Link>
         </div>
       </div>
     </footer>
