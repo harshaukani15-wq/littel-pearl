@@ -5,8 +5,9 @@ import EditProductForm from './EditProductForm'
 export default async function EditProductPage({
   params
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }) {
+  const resolvedParams = await params
   const supabase = await getAdminSupabase()
   
   const { data: product, error } = await supabase
@@ -15,7 +16,7 @@ export default async function EditProductPage({
       *,
       images:product_images(*)
     `)
-    .eq('id', params.id)
+    .eq('id', resolvedParams.id)
     .single()
 
   if (error || !product) {
