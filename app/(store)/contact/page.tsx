@@ -41,11 +41,13 @@ export default async function ContactPage({
                 <p>{contactEmail}</p>
               </div>
               
+              {/* 
               <div>
                 <h3 className="font-label text-label-caps text-on-surface">Phone</h3>
                 <p>{contactPhone}</p>
                 <p className="text-body-sm mt-1">{contactTiming}</p>
               </div>
+              */}
             </div>
           </div>
           
