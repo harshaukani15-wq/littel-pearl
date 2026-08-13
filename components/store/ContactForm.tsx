@@ -35,7 +35,7 @@ export function ContactForm({ targetEmail }: ContactFormProps) {
           id="email"
           name="email"
           placeholder="name@example.com"
-          pattern="[a-z0-9._%+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,}$"
+          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
           title="Please enter a valid email address"
           required
           className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary invalid:focus:border-error"
@@ -49,7 +49,7 @@ export function ContactForm({ targetEmail }: ContactFormProps) {
           id="phone"
           name="phone"
           placeholder="0000000000"
-          pattern="^[6-9]\\d{9}$"
+          pattern="^[6-9]\d{9}$"
           title="Please enter a valid 10-digit Indian mobile number"
           required
           className="w-full bg-surface border border-outline-variant/50 rounded-lg px-4 py-2 focus:outline-none focus:border-primary invalid:focus:border-error"
